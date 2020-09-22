@@ -1,0 +1,44 @@
+<p>search-bar works!</p>
+<!-- <input type="date" placeholder="das"> -->
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+
+<button mat-button>Basic</button> -->
+
+
+<!-- 
+<mat-form-field appearance="fill">
+    <mat-label>From</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>To</mat-label>
+    <input matInput [matDatepicker]="picker1">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field> -->
+
+<form [formGroup]="search" (ngSubmit)="submit()" class="form-container">
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Search...</mat-label>
+        <input matInput formControlName="search">
+    </mat-form-field> -->
+    <div class="item item-1" fxFlex="50%" fxFlexOrder="1">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="From" type="text" formControlName="fromDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="item item-1" fxFlex="50%" fxFlexOrder="1">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker2" placeholder="To" type="text" formControlName="toDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <button mat-button>Search</button>
+</form>

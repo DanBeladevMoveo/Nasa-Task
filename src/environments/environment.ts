@@ -1,9 +1,10 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+const API_KEY = 'NQ9Rbo43fH3SePgiY2CTpiEFa4BgdpUd0dORQmYy';
 export const environment = {
-  production: false
+  production: false,
+  API_URL: `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=`
 };
 
 /*
