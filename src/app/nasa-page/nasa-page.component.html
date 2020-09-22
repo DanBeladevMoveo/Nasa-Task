@@ -1,2 +1,4 @@
 <app-search-bar></app-search-bar>
-<app-card *ngFor="let date of nasaService.dates" [date]="date"></app-card>
+<div class="cards">
+    <app-card *ngFor="let date of nasaService.dates" [date]="date"></app-card>
+</div>

@@ -20,8 +20,6 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.nasaService.getApod(this.date).subscribe(res_apod => {
       this.apod = JSON.parse(JSON.stringify(res_apod));
-      console.log(res_apod);
-      
     }
     )
 
