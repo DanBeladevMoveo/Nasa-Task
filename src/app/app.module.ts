@@ -19,7 +19,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MatNativeDateModule,
     MatInputModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
