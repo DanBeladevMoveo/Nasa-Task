@@ -31,11 +31,7 @@ export class SearchBarComponent implements OnInit {
     const to = this.search.controls.toDate.value;
     const to_Date = new Date(to);
     const from_Date = new Date(from);
-    const diff = to_Date.getDate() - from_Date.getDate()+1;
-    console.log(diff);
-    
-
-    
+    const diff = to_Date.getDate() - from_Date.getDate()+1;    
 
     for (let i = 0; i < diff; i++) {
       const currentDay = to_Date.getDate() - i;

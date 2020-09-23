@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<!-- <h1>Login</h1>
 <form [formGroup]="loginForm" (ngSubmit)="submit()">
     <label>
         Email
@@ -9,4 +9,35 @@
         <input type="password" formControlName="password">
     </label>
     <button>Login</button>
-</form>
+</form> -->
+
+<mat-card class="product">
+    <mat-card-header>
+        <div mat-card-avatar class="header"></div>
+        <mat-card-title class="title">Hello Guest, Please sign in to continue</mat-card-title>
+    </mat-card-header>
+    <!-- <img mat-card-image src="{{apod.url}}" class="image"> -->
+    <mat-card-content>
+        <div>
+            
+            <form [formGroup]="loginForm" (ngSubmit)="submit()" class="form-container">
+                <label>
+                    <!-- Email -->
+                    <input type="email" formControlName="email" placeholder="Email" class="input">
+                </label>
+                <label>
+                    <!-- Password -->
+                    <input type="password" formControlName="password" placeholder="Password" class="input">
+                </label>
+                <button mat-button color="primary" class="buyBtn">Login</button>
+                <!-- <button>Login</button> -->
+            </form>
+        </div>
+        <!-- <div class="description">{{apod.explanation}}</div> -->
+    </mat-card-content>
+    <mat-card-footer>
+        <mat-card-actions class="footer">
+            <!-- <p class="price">{{apod.date}}</p> -->
+        </mat-card-actions>
+    </mat-card-footer>
+</mat-card>
