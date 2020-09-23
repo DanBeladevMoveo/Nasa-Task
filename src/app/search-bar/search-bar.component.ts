@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { notEqual } from 'assert';
-import { NasaService } from '../nasa.service';
+
+import { NasaService } from '../services/nasa.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -35,8 +35,6 @@ export class SearchBarComponent implements OnInit {
 
     for (let i = 0; i < diff; i++) {
       const currentDay = to_Date.getDate() - i;
-      console.log(currentDay);
-      
       const month = JSON.stringify(from_Date.getMonth() + 1).length === 1 ? `0${from_Date.getMonth() + 1}`: from_Date.getMonth() + 1
       const date_str = `${from_Date.getFullYear()}-${month}-${currentDay}`;
       dates.push(date_str);
@@ -48,7 +46,6 @@ export class SearchBarComponent implements OnInit {
     const from = this.search.controls.fromDate.value;
     const to = this.search.controls.toDate.value;
     const now = new Date();
-    // now.setHours(0,0,0,0)
     if(from >= now)
     {
       alert(`Please Select Date In Past`);
@@ -58,9 +55,6 @@ export class SearchBarComponent implements OnInit {
       alert(`Please 'TO' Date - greater than From`);
       return;
     }
-
-    console.log(this.search.controls.toDate.value);
-    console.log(this.search.controls.fromDate.value);
     this.setDates();
   }
 
