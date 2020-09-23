@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatCardModule } from '@angular/material/card';
     SearchBarComponent,
     CardComponent,
     PageNotFoundComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
