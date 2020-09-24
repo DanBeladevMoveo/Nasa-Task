@@ -10,17 +10,25 @@ import { User } from '../user';
 })
 export class LoginComponent implements OnInit {
   user: User = { email: '', password: '' }
+
   constructor(private router: Router, private fb: FormBuilder) { }
+  
   loginForm = this.fb.group({
-    email: ['', Validators.compose([Validators.required, Validators.email, this.checkEmail()])],
-    password: ['', Validators.compose([Validators.required, Validators.minLength(3), this.checkPassword()])],
+    email: ['test@moveo.group', Validators.compose([Validators.required, Validators.email, this.checkEmail()])],
+    password: ['123', Validators.compose([Validators.required, Validators.minLength(3), this.checkPassword()])],
   })
 
   ngOnInit(): void {
+    const islogin = localStorage.getItem('login');
+    if(islogin === 'true'){
+      this.router.navigateByUrl('list');
+    }
   }
+
   submit(): void {
     alert(`${this.loginForm.value.email} Logged In`);
     this.user = this.loginForm.value;
+    localStorage.setItem('login','true');
     this.router.navigateByUrl('list');
   }
   checkEmail(): ValidatorFn {

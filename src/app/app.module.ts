@@ -15,11 +15,16 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-import { DatePickerComponent } from './date-picker/date-picker.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { HeaderComponent } from './header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { LastSearchesComponent } from './last-searches/last-searches.component';
+import { SearchDataTableComponent } from './search-data-table/search-data-table.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +33,10 @@ import {MatDividerModule} from '@angular/material/divider';
     SearchBarComponent,
     CardComponent,
     PageNotFoundComponent,
-    DatePickerComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    HeaderComponent,
+    LastSearchesComponent,
+    SearchDataTableComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     HttpClientModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatToolbarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LastSearchesComponent } from './last-searches/last-searches.component';
 import { LoginComponent } from './login/login.component';
 import { NasaPageComponent } from './nasa-page/nasa-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -7,6 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'list', component: NasaPageComponent},
+  {path:'last-search', component: LastSearchesComponent},
   {path:'', redirectTo:'/login',pathMatch:'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
