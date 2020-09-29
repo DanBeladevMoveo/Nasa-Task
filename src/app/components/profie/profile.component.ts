@@ -4,8 +4,8 @@ import { AbstractControl, FormBuilder, ValidatorFn, Validators } from '@angular/
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { FirebaseService } from '../services/firebase.service';
-import { isValidID, print } from '../utils';
+import { FirebaseService } from '../../services/firebase.service';
+import { isValidID, print } from '../../utils';
 
 @Component({
   selector: 'app-profie',

@@ -4,7 +4,7 @@ import { AngularFireModule } from '@angular/fire';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
-import { FirebaseService } from '../services/firebase.service';
+import { FirebaseService } from '../../services/firebase.service';
 // import { User } from '../user';
 
 @Component({

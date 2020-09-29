@@ -1,4 +1,4 @@
-import { Apod } from './apod';
+import { Apod } from '../models/apod';
 
 export const apod: Apod = {
     date: "2020-08-15",

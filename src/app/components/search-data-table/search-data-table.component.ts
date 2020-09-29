@@ -1,7 +1,7 @@
 import { /* ChangeDetectorRef, */ Component, OnInit } from '@angular/core';
-import { SearchData } from '../searchData';
-import { FirebaseService } from '../services/firebase.service';
-import { SearchService } from '../services/search.service';
+import { SearchData } from 'src/app/models/searchData';
+import { FirebaseService } from '../../services/firebase.service';
+import { SearchService } from '../../services/search.service';
 
 
 
@@ -19,6 +19,7 @@ import { SearchService } from '../services/search.service';
   styleUrls: ['./search-data-table.component.scss']
 })
 export class SearchDataTableComponent implements OnInit {
+  
   displayedColumns: string[] = [/* 'position', */ 'from', 'to'];
   // dataSource = ELEMENT_DATA;
   dataSource: SearchData[] =[];

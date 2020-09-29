@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import 'firebase/firestore'
 import { AngularFirestore } from '@angular/fire/firestore';
-import { UserProfile } from '../user';
+import { UserProfile } from '../models/user';
 import * as firebase from 'firebase'
 import { AngularFireAuth } from '@angular/fire/auth';
-import { SearchData } from '../searchData';
+import { SearchData } from '../models/searchData';
 import { of } from 'rxjs';
 import { SearchService } from './search.service';
 

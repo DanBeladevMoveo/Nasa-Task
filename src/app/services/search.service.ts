@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { SearchData } from '../searchData';
+import { SearchData } from '../models/searchData';
+
 import { FirebaseService } from './firebase.service';
 
 

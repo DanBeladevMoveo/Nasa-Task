@@ -4,8 +4,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Vali
 
 
 
-import { NasaService } from '../services/nasa.service';
-import { SearchService } from '../services/search.service';
+import { NasaService } from '../../services/nasa.service';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search-bar',
