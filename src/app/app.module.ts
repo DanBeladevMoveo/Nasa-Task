@@ -25,6 +25,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LastSearchesComponent } from './last-searches/last-searches.component';
 import { SearchDataTableComponent } from './search-data-table/search-data-table.component';
 import {MatTableModule} from '@angular/material/table';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { ProfieComponent } from './profie/profile.component';
+import { SocialLoginComponent } from './social-login/social-login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,9 @@ import {MatTableModule} from '@angular/material/table';
     SpinnerComponent,
     HeaderComponent,
     LastSearchesComponent,
-    SearchDataTableComponent
+    SearchDataTableComponent,
+    ProfieComponent,
+    SocialLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +63,11 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatDividerModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

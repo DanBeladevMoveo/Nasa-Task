@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Validators, ValidatorFn, AbstractControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { User } from '../user';
 
 @Component({
@@ -10,8 +12,8 @@ import { User } from '../user';
 })
 export class LoginComponent implements OnInit {
   user: User = { email: '', password: '' }
-
-  constructor(private router: Router, private fb: FormBuilder) { }
+  constructor(private router: Router, private fb: FormBuilder) { 
+  }
   
   loginForm = this.fb.group({
     email: ['test@moveo.group', Validators.compose([Validators.required, Validators.email, this.checkEmail()])],
@@ -20,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     const islogin = localStorage.getItem('login');
-    if(islogin === 'true'){
+    if(islogin){
       this.router.navigateByUrl('list');
     }
   }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nasa-cc66d": {
+      "hosting": {
+        "NASA-task": [
+          "nasa-cc66d"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  :host {
+    display: block;
+    margin-top: 1rem;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    max-width: 500px;
+    align-items: center;
+  }
+
+
+  .header {
+    background-size: cover;
+    margin-bottom: 5px;
+  }
+
+
+  .title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .buyBtn {
+    font-size: 30px;
+  }
+  
+  .product {
+    max-width: 500px;
+    height: 500px;
+    margin: 15px 15px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    background-color: cornsilk;
+    align-items: center;
+    left: 35%;
+    // top: 200px;
+    // margin-bottom: 200px;
+  }
+  
+  @media screen and (max-width: 320px) and (max-width: 359px) {
+    .product {
+      max-width: 200px;
+      left: 20px
+     }
+  }
+  
+  @media screen and (min-width:360px) and (max-width: 419px) {
+    .product {
+      max-width: 250px;
+      left: 20px;
+     }
+  }
+  
+  @media screen and (min-width:420px) and (max-width: 799px) {
+    .product {
+      max-width: 250px;
+      left: 35px;
+     }
+  }
+  
+  @media screen and (min-width: 800px) and (max-width: 1000px){
+    .list {
+      margin:0;
+      width: 100%;
+    }
+    .product {
+     max-width: 250px;
+    }
+    * {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+  
+  
+  @media screen and (min-width: 1001px) {
+    .product {
+      max-width: 400px;
+     }
+  }

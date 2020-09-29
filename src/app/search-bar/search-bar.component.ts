@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
@@ -62,7 +61,6 @@ export class SearchBarComponent implements OnInit {
 
   checkFromDateInPast(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
-      console.log('from control: ', control);
       const now = new Date();
       const forbidden = control.value >= now
       return forbidden ? { isForbidden: true } : null;

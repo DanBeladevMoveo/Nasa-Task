@@ -1,11 +1,14 @@
 <mat-toolbar class="mat-elevation-z8" color="primary">
     <div class="store-name">
-      <span> Dan Beladev - NASA Task</span>
-      <span> </span>
-      <!-- <mat-icon class="logo">local_bar</mat-icon> -->
+      <ng-container *ngIf="(pictureUrl$ | async) as pictureUrl">
+        <img class="user-avatar" [src]="pictureUrl" >
+      </ng-container>
+      <span></span>
+      <span>NASA Application</span>
     </div>
-  <div class="spacer"></div>
-  <a mat-button routerLink = "/">Home</a>
-  <a mat-button routerLink = "/last-search">Last Searches</a>
-  <a mat-button (click)="logout()">Logout</a>
+    <div class="spacer"></div>
+  <a mat-button routerLink = "/list" *ngIf="isLoggedIn$ | async">Home</a>
+  <a mat-button routerLink = "/last-search" *ngIf="isLoggedIn$ | async" >Last Searches</a>
+  <a mat-button (click)="logout()" *ngIf="isLoggedIn$ | async">Logout</a>
+
    </mat-toolbar>
