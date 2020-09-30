@@ -11,17 +11,21 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   // {path:'login', component: LoginComponent, canActivate: [AuthGuard]},
-  {path:'login', component: SocialLoginComponent},
-  {path:'my-map', component: GoogleMapComponent, canActivate: [AuthGuard]},
-  {path:'list', component: NasaPageComponent, canActivate: [AuthGuard]},
-  {path:'last-search', component: LastSearchesComponent, canActivate: [AuthGuard]},
-  {path:'profile', component: ProfieComponent, canActivate: [AuthGuard]},
-  {path:'', redirectTo:'/list',pathMatch:'full'},
-  {path: '**', component: PageNotFoundComponent}
+  { path: 'login', component: SocialLoginComponent },
+  { path: 'my-map', component: GoogleMapComponent, canActivate: [AuthGuard] },
+  { path: 'list', component: NasaPageComponent, canActivate: [AuthGuard] },
+  {
+    path: 'last-search',
+    component: LastSearchesComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'profile', component: ProfieComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/list', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,11 +1,16 @@
-import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { SpinnerService } from '../../services/spinner.service';
 
 @Component({
   selector: 'app-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SpinnerComponent implements OnInit {
   showSpinner = false;
@@ -20,7 +25,7 @@ export class SpinnerComponent implements OnInit {
 
   init() {
     this.spinnerService.getSpinnerObserver().subscribe((status) => {
-      this.showSpinner = status === 'start' ;
+      this.showSpinner = status === 'start';
       this.cdRef.detectChanges();
     });
   }

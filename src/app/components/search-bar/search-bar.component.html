@@ -1,24 +1,39 @@
-<form [name]="search"[formGroup]="search" (ngSubmit)="submit()" class="form-container">
-    <div class="item item-1" fxFlex="50%" fxFlexOrder="1">
-        <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="From" type="text" formControlName="fromDate">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <mat-error
-        *ngIf="fromError">
-        Only Dates From Past</mat-error>
-    </div>
+<form
+  [name]="search"
+  [formGroup]="search"
+  (ngSubmit)="submit()"
+  class="form-container"
+>
+  <div class="item item-1" fxFlex="50%" fxFlexOrder="1">
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        placeholder="From"
+        type="text"
+        formControlName="fromDate"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-error *ngIf="fromError"> Only Dates From Past</mat-error>
+  </div>
 
-    <div class="item item-1" fxFlex="50%" fxFlexOrder="1">
-        <mat-form-field>
-            <input matInput [matDatepicker]="picker2" placeholder="To" type="text" formControlName="toDate">
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2></mat-datepicker>
-        </mat-form-field>
-            <mat-error
-            *ngIf="toError">
-            Must be greater than 'From' Date</mat-error>
-    </div>
-    <button mat-raised-button color="primary" [disabled]="toError || fromError">Search</button>
+  <div class="item item-1" fxFlex="50%" fxFlexOrder="1">
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="picker2"
+        placeholder="To"
+        type="text"
+        formControlName="toDate"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+    <mat-error *ngIf="toError"> Must be greater than 'From' Date</mat-error>
+  </div>
+  <button mat-raised-button color="primary" [disabled]="toError || fromError">
+    Search
+  </button>
 </form>
