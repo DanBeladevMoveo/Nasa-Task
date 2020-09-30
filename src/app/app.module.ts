@@ -32,6 +32,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { ProfieComponent } from './components/profie/profile.component';
 import { SocialLoginComponent } from './components/social-login/social-login.component';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
+import { GoogleAutocompleteComponent } from './components/google-autocomplete/google-autocomplete.component';
+
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +49,9 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
     LastSearchesComponent,
     SearchDataTableComponent,
     ProfieComponent,
-    SocialLoginComponent
+    SocialLoginComponent,
+    GoogleMapComponent,
+    GoogleAutocompleteComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +73,8 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    GooglePlaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { LastSearchesComponent } from './components/last-searches/last-searches.component';
 import { LoginComponent } from './components/login/login.component';
 import { NasaPageComponent } from './components/nasa-page/nasa-page.component';
@@ -10,10 +11,11 @@ import { SocialLoginComponent } from './components/social-login/social-login.com
 const routes: Routes = [
   // {path:'login', component: LoginComponent},
   {path:'login', component: SocialLoginComponent},
+  {path:'my-map', component: GoogleMapComponent},
   {path:'list', component: NasaPageComponent},
   {path:'last-search', component: LastSearchesComponent},
   {path:'profile', component: ProfieComponent},
-  {path:'', redirectTo:'/login',pathMatch:'full'},
+  {path:'', redirectTo:'/my-map',pathMatch:'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
 
