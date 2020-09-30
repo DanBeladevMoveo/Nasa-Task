@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'list', component: NasaPageComponent},
   {path:'last-search', component: LastSearchesComponent},
   {path:'profile', component: ProfieComponent},
-  {path:'', redirectTo:'/my-map',pathMatch:'full'},
+  {path:'', redirectTo:'/login',pathMatch:'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
 

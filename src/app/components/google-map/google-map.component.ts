@@ -23,7 +23,7 @@ export class GoogleMapComponent implements OnInit,AfterViewInit {
     const mapProperties = {
          center: new google.maps.LatLng(Moveo.lat, Moveo.long),
          zoom: 17,
-         mapTypeId: google.maps.MapTypeId.ROADMAP
+         mapTypeId: google.maps.MapTypeId.ROADMAP,
     };
     const marker = new google.maps.Marker({
       position: new google.maps.LatLng(Moveo.lat, Moveo.long),
@@ -41,11 +41,6 @@ export class GoogleMapComponent implements OnInit,AfterViewInit {
   })
   marker.setMap(this.map)
   this.map.setCenter(new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng()))
-   
-  // this.address = place['formatted_address'];
-  // this.phone = this.getPhone(place);
-  // this.formattedAddress = place['formatted_address'];
-  // this.zone.run(() => this.formattedAddress = place['formatted_address']);
 }
 
 getPhone(place) {
@@ -68,7 +63,6 @@ getAddrComponent(place, componentTemplate) {
 }
 
 drawHomeToWorkRoute():void {
-  
   const home = new google.maps.LatLng(MyHome.lat,MyHome.long);
   const moveo = new google.maps.LatLng(Moveo.lat,Moveo.long);
   const directionService = new google.maps.DirectionsService();

@@ -1,4 +1,8 @@
-<app-google-autocomplete (setAddress)="getAddress($event)" adressType="geocode"></app-google-autocomplete>
-<button mat-raised-button color="primary" (click)="drawHomeToWorkRoute()">Find Route</button>
-<div #map style="width:100%;height:100%">
-</div>
+    <app-google-autocomplete
+    (setAddress)="getAddress($event)"
+    adressType="geocode"
+    ></app-google-autocomplete>
+    <button mat-raised-button color="warn" (click)="drawHomeToWorkRoute()">
+        Find Route To Workplace
+    </button>
+<div #map style="width: 100%; height: 80%;" ></div>
