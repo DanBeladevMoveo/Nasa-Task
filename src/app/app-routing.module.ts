@@ -7,15 +7,16 @@ import { NasaPageComponent } from './components/nasa-page/nasa-page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProfieComponent } from './components/profie/profile.component';
 import { SocialLoginComponent } from './components/social-login/social-login.component';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
-  // {path:'login', component: LoginComponent},
+  // {path:'login', component: LoginComponent, canActivate: [AuthGuard]},
   {path:'login', component: SocialLoginComponent},
-  {path:'my-map', component: GoogleMapComponent},
-  {path:'list', component: NasaPageComponent},
-  {path:'last-search', component: LastSearchesComponent},
-  {path:'profile', component: ProfieComponent},
-  {path:'', redirectTo:'/login',pathMatch:'full'},
+  {path:'my-map', component: GoogleMapComponent, canActivate: [AuthGuard]},
+  {path:'list', component: NasaPageComponent, canActivate: [AuthGuard]},
+  {path:'last-search', component: LastSearchesComponent, canActivate: [AuthGuard]},
+  {path:'profile', component: ProfieComponent, canActivate: [AuthGuard]},
+  {path:'', redirectTo:'/list',pathMatch:'full'},
   {path: '**', component: PageNotFoundComponent}
 ];
 

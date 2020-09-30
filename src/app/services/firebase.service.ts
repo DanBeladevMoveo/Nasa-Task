@@ -16,6 +16,18 @@ export class FirebaseService {
   lastSearches: SearchData[]=[];
   constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) { }
 
+  isAuthenticated() {
+    var promise = new Promise((resolve, reject) => {
+      this.afAuth.authState.subscribe(res => {
+        if (res && res.uid) {
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      });
+    });
+    return promise;
+  }
 
   createUser(user) {
     const userData: UserProfile = {
