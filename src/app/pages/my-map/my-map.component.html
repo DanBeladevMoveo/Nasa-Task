@@ -1,0 +1,14 @@
+  <div class="container">
+       <div class="search-container">
+           <app-google-autocomplete
+           (setAddress)="getAddress($event)"
+           adressType="geocode"
+           class="auto"
+           ></app-google-autocomplete>
+           <button class="button"mat-raised-button color="warn" (click)="drawHomeToWorkRoute()">
+               Find Route To Workplace
+            </button>
+        </div>
+</div>
+<app-google-map></app-google-map>
+
