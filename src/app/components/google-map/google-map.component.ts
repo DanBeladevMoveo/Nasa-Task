@@ -37,7 +37,7 @@ export class GoogleMapComponent implements OnInit,AfterViewInit {
    console.log('in maps',place);
   const marker = new google.maps.Marker({
     position: new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng()),
-    title: 'Moveo'
+    title: place.name
   })
   marker.setMap(this.map)
   this.map.setCenter(new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng()))
