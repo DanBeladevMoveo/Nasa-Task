@@ -24,7 +24,7 @@ export class SearchBarComponent implements OnInit {
   ) {}
   search = this.fb.group({
     fromDate: [
-      new Date('2020-09-01'),
+      new Date('2020-10-01'),
       Validators.compose([this.checkFromDateInPast()]),
     ],
     toDate: [new Date()],
