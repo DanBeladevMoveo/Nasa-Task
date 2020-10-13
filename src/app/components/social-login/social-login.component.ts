@@ -37,7 +37,7 @@ export class SocialLoginComponent implements OnInit, OnDestroy {
 
     this.ngZone.run(() => {
       const { additionalUserInfo, user,operationType } = result;
-      if (additionalUserInfo.isNewUser || operationType === "signIn") {
+      if (additionalUserInfo.isNewUser || (operationType === "signIn" && !user.uid) ) {
         this.fbService
           .createUser(user)
           .then((user) => {

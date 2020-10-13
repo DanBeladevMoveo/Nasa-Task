@@ -30,10 +30,12 @@ export class CardComponent implements OnInit {
       .getApod(this.date)
       .pipe(
         map((res: Apod) => {
+          const defaultImage = 'https://apod.nasa.gov/apod/image/2010/markarian_FernandoPena1024.jpg';
+          const url = res.url.includes('.jpg') ? res.url : defaultImage;
           return {
             date: res.date,
             title: res.title,
-            url: res.url,
+            url: url,
             explanation: res.explanation,
           };
         }),

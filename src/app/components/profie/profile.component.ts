@@ -33,31 +33,31 @@ export class ProfieComponent implements OnInit {
 
   profileForm = this.fb.group({
     email: [
-      'dan@gmail.com',
+      '',
       Validators.compose([Validators.required, Validators.email]),
     ],
     firstName: [
-      'dan',
+      '',
       Validators.compose([
         Validators.required,
         Validators.pattern('[a-zA-Z ]*'),
       ]),
     ],
     lastName: [
-      'beladev',
+      '',
       Validators.compose([
         Validators.required,
         Validators.pattern('[a-zA-Z ]*'),
       ]),
     ],
-    address: ['rami2 haifa', Validators.compose([Validators.required])],
+    address: ['', Validators.compose([Validators.required])],
     birthDate: ['', Validators.compose([Validators.required])],
     id: [
-      '205684277',
+      '',
       Validators.compose([Validators.required, this.checkID()]),
     ],
     phoneNumber: [
-      '0528304112',
+      '',
       Validators.compose([Validators.required, Validators.minLength(10)]),
     ],
     photoURL: ['', Validators.compose([Validators.required])],
