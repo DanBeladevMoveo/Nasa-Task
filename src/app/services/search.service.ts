@@ -20,13 +20,13 @@ export class SearchService {
   //   return this.lastSearches.slice(0,5);
   // }
 
-  getSearches() {
-    const lastSearches: SearchData[] = this.firebaseService.getSearches();
-    console.log('search service: last searches?', lastSearches);
+  async getSearches() {
+    const data =  await this.firebaseService.getSearches();
+    console.log('search service: last searches?', data);
+    return [...data];
+    // this.lastSearches = [...data];
 
-    this.lastSearches = [...lastSearches];
-
-    return this.lastSearches;
+    // return this.lastSearches;
   }
 
   addSearch(from: string, to: string): void {

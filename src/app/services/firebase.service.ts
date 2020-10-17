@@ -39,8 +39,8 @@ export class FirebaseService {
       email: user.email || '',
       uid: user.uid || '',
     };
-    console.log('user is: ',userData);
-    
+    console.log('user is: ', userData);
+
     return this.db.collection(`users`).add(userData);
   }
 
@@ -71,15 +71,13 @@ export class FirebaseService {
           .limit(1)
           .get()
           .then((querySnapshot) => {
-            if(querySnapshot.docs[0]){
+            if (querySnapshot.docs[0]) {
               const docRef = this.db
-              .collection(`users`)
-              .doc(`${querySnapshot.docs[0].id}`);
+                .collection(`users`)
+                .doc(`${querySnapshot.docs[0].id}`);
               this.lastSearches.unshift(searchData);
               docRef.set({ lastSearches: this.lastSearches }, { merge: true });
-            }
-            else
-            {
+            } else {
               console.log('failed with load user', querySnapshot);
             }
           });
@@ -87,21 +85,15 @@ export class FirebaseService {
     });
   }
 
-  getSearches(): any {
-    this.afAuth.authState.subscribe((user) => {
-      if (user) {
-        this.db
-          .collection('users')
-          .where('uid', '==', user.uid)
-          .limit(1)
-          .get()
-          .then((querySnapshot) => {
-            const data = querySnapshot.docs[0].data();
-            this.lastSearches = [...data['lastSearches']];
-            console.log(this.lastSearches);
-          });
-      }
-    });
-    return this.lastSearches;
+  async getSearches(): Promise<SearchData[]> {
+    const user = await this.afAuth.currentUser;
+    const querySnapshot = await this.db
+      .collection('users')
+      .where('uid', '==', user.uid)
+      .limit(1)
+      .get();
+    const data = querySnapshot.docs[0].data();
+    const searches = [...data['lastSearches']];
+    return searches;
   }
 }

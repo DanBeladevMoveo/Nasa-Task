@@ -13,8 +13,8 @@ export class SearchDataTableComponent implements OnInit {
   dataSource: SearchData[] = [];
   constructor(private searchService: SearchService) {}
 
-  ngOnInit(): void {
-    this.searchService.getSearches();
-    this.dataSource = this.searchService.lastSearches;
+  async ngOnInit() {
+    const searches = await this.searchService.getSearches();
+    this.dataSource = [...searches];
   }
 }
